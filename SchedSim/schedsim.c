@@ -224,7 +224,8 @@ void findavgTimePriority( ProcessType plist[], int n)
 void printMetrics(ProcessType plist[], int n)
 {
     int total_wt = 0, total_tat = 0; 
-    float awt, att;
+    float a_weight;
+  float  a_inc;
     
     printf("\tProcesses\tBurst time\tWaiting time\tTurn around time\n"); 
   
@@ -237,11 +238,11 @@ void printMetrics(ProcessType plist[], int n)
         printf("\t%d\t\t%d\t\t%d\t\t%d\n", plist[i].pid, plist[i].bt, plist[i].wt, plist[i].tat); 
     } 
   
-    awt = ((float)total_wt / (float)n);
-    att = ((float)total_tat / (float)n);
+    a_weight = ((float)total_wt / (float)n);
+    a_inc = ((float)total_tat / (float)n);
     
-    printf("\nAverage waiting time = %.2f", awt); 
-    printf("\nAverage turn around time = %.2f\n", att); 
+    printf("\nAverage waiting time = %.2f", a_weight); 
+    printf("\nAverage turn around time = %.2f\n",  a_inc); 
 } 
 
 ProcessType * initProc(char *filename, int *n) 
